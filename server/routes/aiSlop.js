@@ -27,6 +27,7 @@ router.post('/', async (req, res) => {
     });
 
     res.json({ result: response.choices[0].message.content });
+    console.log('Response from OpenAI:', response.choices[0].message.content);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: error.message });
