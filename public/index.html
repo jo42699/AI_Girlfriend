@@ -8,8 +8,17 @@
     <title>AI</title>
 </head>
 <body>
-    <h1>AI Girlfriend</h1>
+    <div class="container">
+        <h1>AI Girlfriend</h1>
     <p>Welcome to the AI Girlfriend application!</p>
+    <textarea id="promptInput" rows="5" cols="40" placeholder="Type your prompt here..."></textarea>
+    <br><br>
+
+  <button onclick="sendPrompt()">Send</button>
+
+  <h2 >Response:</h2>
+  <pre id="responseBox"></pre>
+    </div>
 </body>
 <script type="module" src="./js/girlfriend.js" ></script>
 </html>
