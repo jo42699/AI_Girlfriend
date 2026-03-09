@@ -26,3 +26,20 @@ h2 {
    font-family: 'Courier New', Courier, monospace;
    margin-top: 20px;
 }
+
+
+.response {
+  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#responseBox {
+  white-space: pre-wrap;     
+  word-wrap: break-word;     
+  overflow-wrap: anywhere;  
+  max-width: 100%;
+  padding: 10px;
+  background: #f5f5f5;
+  border-radius: 6px;
+}
