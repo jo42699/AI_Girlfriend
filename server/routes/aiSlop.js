@@ -19,12 +19,13 @@ router.get('/', (req, res) => {
 // POST route
 router.post('/', async (req, res) => {
   try {
-    const { prompt } = req.body; 
+    const { prompt} = req.body; 
 
+  
     const response = await openai.chat.completions.create({
       model: "gpt-4o-mini",
       messages: [
-        { role: "system", content: basePrompt }, 
+        { role: "system", content:basePrompt }, 
         { role: "user", content: prompt }
       ],
       max_tokens: 150

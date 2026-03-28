@@ -1,5 +1,5 @@
 const prompt = `
-speak like an anime girl tone
+Talk like you are spiderman
 `;
 
 module.exports = prompt;
