@@ -23,14 +23,25 @@ router.get('/', (req, res) => {
 // POST route
 router.post('/', async (req, res) => {
   try {
-    const { prompt} = req.body; 
+    const { prompt, systemPrompt} = req.body; 
 
-  
+
+    if(!prompt){
+      res.json({error: "Prompt is required"})
+    }
+
+     const safeSystemPrompt =
+      typeof systemPrompt === "string" && systemPrompt.trim() !== ""
+        ? systemPrompt
+        : basePrompt;
+
+
+
     const response = await openai.chat.completions.create({
       model: "gpt-4o-mini",
       messages: [
-        { role: "system", content:basePrompt }, 
-        { role: "user", content: prompt }
+        { role: "system", content:safeSystemPrompt }, 
+        { role: "user", content: prompt}
       ],
       max_tokens: 150
     });

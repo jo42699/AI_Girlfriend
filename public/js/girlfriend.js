@@ -1,6 +1,12 @@
 
+
+
+
+
+
 async function sendPrompt() {
  const prompt = document.getElementById('promptInput').value;
+ const systemPrompt = document.getElementById('basePromptInput').value;
 
     try {
         const res = await fetch('http://localhost:3000/v1/aiSlop', {
@@ -8,7 +14,7 @@ async function sendPrompt() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ prompt })
+            body: JSON.stringify({ prompt, systemPrompt })
         });
 
         const data = await res.json();
